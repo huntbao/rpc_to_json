@@ -114,9 +114,10 @@ Response
         };
     }
     // List<Object>
-    / w:(Word) "<" type:(Word) ">" {
+    / importType:(Word) "<" type:(Word) ">" {
     	return {
-        	type
+        	type,
+            importType
         };
     }
     // int, RpcResult...

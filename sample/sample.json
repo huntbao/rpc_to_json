@@ -1,0 +1,142 @@
+{
+  "package": "com.netease.api",
+  "interfaceName": "CustomConfigRpcService",
+  "imports": [
+    "com.netease.RpcResult",
+    "com.netease.ConfigDTO",
+    "java.util.List",
+    "java.util.Map"
+  ],
+  "description": "Custom config service",
+  "methods": [
+    {
+      "description": "添加配置",
+      "response": {
+        "type": "Boolean",
+        "importType": "RpcResult"
+      },
+      "method": "addConfig",
+      "params": [
+        {
+          "type": "String",
+          "name": "key",
+          "description": "配置项名称"
+        },
+        {
+          "type": "String",
+          "name": "value",
+          "description": "配置项内容"
+        },
+        {
+          "type": "boolean",
+          "name": "json",
+          "description": "是否是json"
+        }
+      ]
+    },
+    {
+      "description": "删除配置",
+      "response": {
+        "type": "Boolean",
+        "importType": "RpcResult"
+      },
+      "method": "deleteConfigById",
+      "params": [
+        {
+          "type": "long",
+          "name": "id",
+          "description": "id"
+        }
+      ]
+    },
+    {
+      "description": "获取配置内容",
+      "response": {
+        "type": "String",
+        "importType": "RpcResult"
+      },
+      "method": "getConfigValue",
+      "params": [
+        {
+          "type": "String",
+          "name": "key",
+          "description": "配置型名称"
+        }
+      ]
+    },
+    {
+      "description": "获取所有的配置项",
+      "response": {
+        "type": "Object",
+        "importType": "RpcResult"
+      },
+      "method": "getAllConfigs",
+      "params": []
+    },
+    {
+      "description": "获取所有的配置",
+      "response": {
+        "isArray": true,
+        "type": "ConfigDTO",
+        "importType": "RpcResult"
+      },
+      "method": "getAllConfigList",
+      "params": []
+    },
+    {
+      "description": "获取配置项列表，按添加时间排序",
+      "response": {
+        "isArray": true,
+        "type": "ConfigDTO",
+        "importType": "RpcResult"
+      },
+      "method": "listForBackend",
+      "params": [
+        {
+          "type": "int",
+          "name": "limit",
+          "description": "limit"
+        },
+        {
+          "type": "long",
+          "name": "offset",
+          "description": "offset"
+        }
+      ]
+    },
+    {
+      "description": "更新配置内容",
+      "response": {
+        "type": "Boolean",
+        "importType": "RpcResult"
+      },
+      "method": "updateConfig",
+      "params": [
+        {
+          "type": "long",
+          "name": "id",
+          "description": "id"
+        },
+        {
+          "type": "String",
+          "name": "newConfig",
+          "description": "新的配置内容"
+        },
+        {
+          "type": "boolean",
+          "name": "json",
+          "description": "是否是json"
+        }
+      ]
+    },
+    {
+      "description": "load所有数据到cache中",
+      "response": {
+        "type": "Void",
+        "importType": "RpcResult"
+      },
+      "method": "loadAllConfigToCacheInBackend",
+      "params": []
+    }
+  ]
+}
