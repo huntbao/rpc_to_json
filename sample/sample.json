@@ -1,9 +1,9 @@
 {
-  "package": "com.netease.api",
+  "package": "com.sample.api",
   "interfaceName": "CustomConfigRpcService",
   "imports": [
-    "com.netease.RpcResult",
-    "com.netease.ConfigDTO",
+    "com.sample.RpcResult",
+    "com.sample.ConfigDTO",
     "java.util.List",
     "java.util.Map"
   ],
