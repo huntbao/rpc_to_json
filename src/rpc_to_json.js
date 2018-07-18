@@ -69,9 +69,9 @@ module.exports = (function() {
                 setParamsDescriptionFromComment(params, methodComment);
                 return {
                 	description: getComment(methodComment),
-                    response: response,
+                    outputs: response,
                     method: method,
-                    params: params
+                    inputs: params
                 }
             },
         peg$c18 = "<Map<",
@@ -120,9 +120,10 @@ module.exports = (function() {
                     type
                 };
             },
-        peg$c39 = function(w, type) {
+        peg$c39 = function(importType, type) {
             	return {
-                	type
+                	type,
+                    importType
                 };
             },
         peg$c40 = function(type) {

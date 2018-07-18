@@ -69,9 +69,9 @@ Method
         setParamsDescriptionFromComment(params, methodComment);
         return {
         	description: getComment(methodComment),
-            response: response,
+            outputs: response,
             method: method,
-            params: params
+            inputs: params
         }
     }
 
