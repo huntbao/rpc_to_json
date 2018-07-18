@@ -55,17 +55,17 @@ Package
     }
 
 Imports
-	= "import"  _ w:(AnyWithoutTerminator) ";" LB* {
+    = "import"  _ w:(AnyWithoutTerminator) ";" LB* {
     	return w.join('');
     }
 
 InterfaceName
-	= "public interface" __ w:(Word) __ "{" LB*  {
+    = "public interface" __ w:(Word) __ "{" LB*  {
     	return w;
     }
 
 Method
-	= methodComment:(Comment)* _ response:(Response) _ method:(Word) _ "(" params:(Parameter)* ");"  LB* {
+    = methodComment:(Comment)* _ response:(Response) _ method:(Word) _ "(" params:(Parameter)* ");"  LB* {
         setParamsDescriptionFromComment(params, methodComment);
         return {
         	description: getComment(methodComment),
@@ -76,8 +76,8 @@ Method
     }
 
 Response
-	// RpcResult<Map<String, String>>
-	= importType:(Word) "<Map<" mapType:(WordOrCommaOrSpace) ">>" {
+    // RpcResult<Map<String, String>>
+    = importType:(Word) "<Map<" mapType:(WordOrCommaOrSpace) ">>" {
     	return {
         	type: 'Object',
             importType
@@ -127,7 +127,7 @@ Response
     }
 
 Parameter
-	= paramType:(ParameterType) _ paramName:(Word) ","? _ {
+    = paramType:(ParameterType) _ paramName:(Word) ","? _ {
     	return Object.assign(paramType, {
             name: paramName
         });
