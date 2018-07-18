@@ -69,7 +69,7 @@ module.exports = (function() {
                 setParamsDescriptionFromComment(params, methodComment);
                 return {
                 	description: getComment(methodComment),
-                    outputs: response,
+                    output: response,
                     method: method,
                     inputs: params
                 }

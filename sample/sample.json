@@ -11,7 +11,7 @@
   "methods": [
     {
       "description": "添加配置",
-      "outputs": {
+      "output": {
         "type": "Boolean",
         "importType": "RpcResult"
       },
@@ -36,7 +36,7 @@
     },
     {
       "description": "删除配置",
-      "outputs": {
+      "output": {
         "type": "Boolean",
         "importType": "RpcResult"
       },
@@ -51,7 +51,7 @@
     },
     {
       "description": "获取配置内容",
-      "outputs": {
+      "output": {
         "type": "String",
         "importType": "RpcResult"
       },
@@ -66,7 +66,7 @@
     },
     {
       "description": "获取所有的配置项",
-      "outputs": {
+      "output": {
         "type": "Object",
         "importType": "RpcResult"
       },
@@ -75,7 +75,7 @@
     },
     {
       "description": "获取所有的配置",
-      "outputs": {
+      "output": {
         "isArray": true,
         "type": "ConfigDTO",
         "importType": "RpcResult"
@@ -85,7 +85,7 @@
     },
     {
       "description": "获取配置项列表，按添加时间排序",
-      "outputs": {
+      "output": {
         "isArray": true,
         "type": "ConfigDTO",
         "importType": "RpcResult"
@@ -106,7 +106,7 @@
     },
     {
       "description": "更新配置内容",
-      "outputs": {
+      "output": {
         "type": "Boolean",
         "importType": "RpcResult"
       },
@@ -131,7 +131,7 @@
     },
     {
       "description": "load所有数据到cache中",
-      "outputs": {
+      "output": {
         "type": "Void",
         "importType": "RpcResult"
       },
