@@ -37,11 +37,12 @@ Start
       pkg:(Package)
       imports:(Imports)*
       description:(Comment)*
-      interfaceName
+      interfaceName:InterfaceName
       methods:(Method)*
       Any {
     	return {
             package: pkg,
+            interfaceName,
             imports,
             description: getComment(description),
             methods
@@ -58,7 +59,7 @@ Imports
     	return w.join('');
     }
 
-interfaceName
+InterfaceName
 	= "public interface" __ w:(Word) __ "{" LB*  {
     	return w;
     }

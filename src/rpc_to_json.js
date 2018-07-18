@@ -36,9 +36,10 @@ module.exports = (function() {
         peg$startRuleFunctions = { Start: peg$parseStart },
         peg$startRuleFunction  = peg$parseStart,
 
-        peg$c0 = function(fileComment, pkg, imports, description, methods) {
+        peg$c0 = function(fileComment, pkg, imports, description, interfaceName, methods) {
             	return {
                     package: pkg,
+                    interfaceName,
                     imports,
                     description: getComment(description),
                     methods
@@ -409,7 +410,7 @@ module.exports = (function() {
               s5 = peg$parseComment();
             }
             if (s4 !== peg$FAILED) {
-              s5 = peg$parseinterfaceName();
+              s5 = peg$parseInterfaceName();
               if (s5 !== peg$FAILED) {
                 s6 = [];
                 s7 = peg$parseMethod();
@@ -421,7 +422,7 @@ module.exports = (function() {
                   s7 = peg$parseAny();
                   if (s7 !== peg$FAILED) {
                     peg$savedPos = s0;
-                    s1 = peg$c0(s1, s2, s3, s4, s6);
+                    s1 = peg$c0(s1, s2, s3, s4, s5, s6);
                     s0 = s1;
                   } else {
                     peg$currPos = s0;
@@ -571,7 +572,7 @@ module.exports = (function() {
       return s0;
     }
 
-    function peg$parseinterfaceName() {
+    function peg$parseInterfaceName() {
       var s0, s1, s2, s3, s4, s5, s6, s7;
 
       s0 = peg$currPos;
