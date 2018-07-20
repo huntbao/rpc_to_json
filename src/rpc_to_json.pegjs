@@ -42,10 +42,10 @@ Start
       Any {
     	return {
             package: pkg,
-            interfaceName,
-            imports,
+            interfaceName: interfaceName,
+            imports: imports,
             description: getComment(description),
-            methods
+            methods: methods
         }
       }
 
@@ -80,7 +80,7 @@ Response
     = importType:(Word) "<Map<" mapType:(WordOrCommaOrSpace) ">>" {
     	return {
         	type: 'Object',
-            importType
+            importType: importType
         };
     }
     // Map<String,Object>
@@ -93,8 +93,8 @@ Response
     / importType:(Word) "<List<" type:(Word) ">>" {
     	return {
         	isArray: true,
-            type,
-            importType
+            type: type,
+            importType: importType
         };
     }
     // RpcResult<PageDTO<List<SoundDetailDTO>>>
@@ -103,27 +103,27 @@ Response
     / importType:(Word) "<" type:(Word) "<List<" listType:(Word) ">>>" {
     	return {
             importTypeVar: type,
-            importType
+            importType: importType
         };
     }
     // List<SoundDeviceManagerDTO>
     / "List<" type:(Word) ">" {
     	return {
         	isArray: true,
-            type
+            type: type
         };
     }
     // List<Object>
     / importType:(Word) "<" type:(Word) ">" {
     	return {
-        	type,
-            importType
+        	type: type,
+            importType: importType
         };
     }
     // int, RpcResult...
     / type:(Word) {
     	return {
-        	type
+        	type: type
         };
     }
 
@@ -137,7 +137,7 @@ Parameter
 ParameterType
 	= "List<" type:(Word) ">" {
     	return {
-        	type,
+        	type: type,
             isArray: true
         };
     }
@@ -148,7 +148,7 @@ ParameterType
     }
     / type:(Word) {
     	return {
-        	type
+        	type: type
         }
     }
 

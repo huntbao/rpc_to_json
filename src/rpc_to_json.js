@@ -39,10 +39,10 @@ module.exports = (function() {
         peg$c0 = function(fileComment, pkg, imports, description, interfaceName, methods) {
             	return {
                     package: pkg,
-                    interfaceName,
-                    imports,
+                    interfaceName: interfaceName,
+                    imports: imports,
                     description: getComment(description),
-                    methods
+                    methods: methods
                 }
               },
         peg$c1 = "package",
@@ -81,7 +81,7 @@ module.exports = (function() {
         peg$c22 = function(importType, mapType) {
             	return {
                 	type: 'Object',
-                    importType
+                    importType: importType
                 };
             },
         peg$c23 = "Map<",
@@ -98,8 +98,8 @@ module.exports = (function() {
         peg$c30 = function(importType, type) {
             	return {
                 	isArray: true,
-                    type,
-                    importType
+                    type: type,
+                    importType: importType
                 };
             },
         peg$c31 = "<",
@@ -109,7 +109,7 @@ module.exports = (function() {
         peg$c35 = function(importType, type, listType) {
             	return {
                     importTypeVar: type,
-                    importType
+                    importType: importType
                 };
             },
         peg$c36 = "List<",
@@ -117,18 +117,18 @@ module.exports = (function() {
         peg$c38 = function(type) {
             	return {
                 	isArray: true,
-                    type
+                    type: type
                 };
             },
         peg$c39 = function(importType, type) {
             	return {
-                	type,
-                    importType
+                	type: type,
+                    importType: importType
                 };
             },
         peg$c40 = function(type) {
             	return {
-                	type
+                	type: type
                 };
             },
         peg$c41 = ",",
@@ -140,13 +140,13 @@ module.exports = (function() {
             },
         peg$c44 = function(type) {
             	return {
-                	type,
+                	type: type,
                     isArray: true
                 };
             },
         peg$c45 = function(type) {
             	return {
-                	type
+                	type: type
                 }
             },
         peg$c46 = "//",
